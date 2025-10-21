@@ -2,11 +2,19 @@
 Nice to see you, yes it is! Welcome to the Taskmaster Suite project, a fun little private project which shall allow you to control a screen for an audience using a controller website, much like Alex Horne and his international counterparts are doing it on the famous TV show Taskmaster.
 
 ## Quickstart
-All you need is
-- a Windows computer (exception: you are capable of running a python application yourself in which case you can check out the section [`Mac and Linux support`](#mac-and-linux-support) below),
-- to download the files from the [latest release](https://github.com/LocoMH/TaskmasterSuite/releases/latest),
-- to extract the downloaded files to an arbitrary location on your computer and finally
-- to run `server.exe`. The next steps will be displayed in this window:
+1. Clone repo
+2. cd into sources/app:
+```bash
+cd sources/app
+```
+3. install dependencies: (you should use a virtual environment)
+```bash
+pip install .
+```
+4. Run it:
+```bash
+python3 tm_suite/server.py
+```
 
 ![Start window](sources/readme/start_window.png)
 
