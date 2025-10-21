@@ -16,7 +16,6 @@ pip install .
 python3 tm_suite/server.py
 ```
 
-![Start window](sources/readme/start_window.png)
 
 There are two websites: The assistant screen and the audience screen. The assistant screen controls the audience screen. That's really all.
 
@@ -123,3 +122,4 @@ to start the application.
 > Q: The websites don't seem to be loading properly.
 > 
 > A: Please note that due to external dependencies you will need an internet connection at least upon opening the websites. Later on it may be cached, I haven't tried that particular case.
+
