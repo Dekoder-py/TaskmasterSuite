@@ -113,15 +113,44 @@ def show_window():
     easygui.msgbox("The Taskmaster Suite was succesfully launched!\n\nTo use the application, open a browser.\n\nFor the audience screen, open this website:\n\nhttp://" + helper.get_ip() + ":8001/home/screen.html\n\nFor the assistant screen, open this website:\n\nhttp://" + helper.get_ip() +
                    ":8001/home/assistant.html\n\nYou can open the websites on any device (including Android/iOS) in your private WiFi network in order to use the application.\n\nNote that closing this window does not stop the application. Closing the black command prompt window does.", "Successfully started")
 
+    import sys
 
 @app.on_event("startup")
 async def startup_event():
-    file_generation_thread = threading.Timer(0, show_window)
-    file_generation_thread.daemon = True
-    file_generation_thread.start()
+    # On macOS, skip EasyGUI (Tkinter) since it must run on the main thread
+    if sys.platform.startswith("darwin"):
+        print("\n✅ Taskmaster Suite started successfully!")
+        print(f"Audience screen → http://{helper.get_ip()}:8001/home/screen.html")
+        print(f"Assistant screen → http://{helper.get_ip()}:8001/home/assistant.html\n")
+    else:
+        # Keep original behavior for Windows
+        file_generation_thread = threading.Timer(0, show_window)
+        file_generation_thread.daemon = True
+        file_generation_thread.start()
 
+    # Continue with normal startup tasks
     loop = asyncio.get_running_loop()
     loop.create_task(start_file_generation())
+
+import sys
+
+@app.on_event("startup")
+async def startup_event():
+    # On macOS, skip EasyGUI (Tkinter) since it must run on the main thread
+    if sys.platform.startswith("darwin"):
+        print("\n✅ Taskmaster Suite started successfully!")
+        print(f"Audience screen → http://{helper.get_ip()}:8001/home/screen.html")
+        print(f"Assistant screen → http://{helper.get_ip()}:8001/home/assistant.html\n")
+    else:
+        # Keep original behavior for Windows
+        file_generation_thread = threading.Timer(0, show_window)
+        file_generation_thread.daemon = True
+        file_generation_thread.start()
+
+    # Continue with normal startup tasks
+    loop = asyncio.get_running_loop()
+    loop.create_task(start_file_generation())
+
 
 
 def start_server():
