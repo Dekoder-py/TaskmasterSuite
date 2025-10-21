@@ -3,17 +3,15 @@ Nice to see you, yes it is! Welcome to the Taskmaster Suite project, a fun littl
 
 ## Quickstart
 1. Clone repo
-2. cd into sources/app:
+2. Run setup
 ```bash
-cd sources/app
+./setup.sh
 ```
-3. install dependencies: (you should use a virtual environment)
+
+## Running again
+Run script
 ```bash
-pip install .
-```
-4. Run it:
-```bash
-python3 tm_suite/server.py
+./run.sh
 ```
 
 
