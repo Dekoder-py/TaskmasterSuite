@@ -3,7 +3,14 @@ Nice to see you, yes it is! Welcome to the Taskmaster Suite project, a fun littl
 
 ## Quickstart
 1. Clone repo
-2. Run setup
+```bash
+git clone https://github.com/dekoder-py/TaskmasterSuite.git
+```
+2. cd into cloned repo
+```bash
+cd TaskmasterSuite
+```
+3. Run setup
 ```bash
 ./setup.sh
 ```
